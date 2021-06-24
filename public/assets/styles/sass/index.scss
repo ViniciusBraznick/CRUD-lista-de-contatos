@@ -1,0 +1,13 @@
+@import './base/_normalize';
+@import './base/_variables';
+@import './base/_global';
+
+// Páginas
+@import './pages/_login';
+@import './pages/_home';
+@import './pages/_addContato';
+
+// Componenetes
+@import './components/_sidenav';
+@import './components/_header';
+@import './components/_contactDestails';

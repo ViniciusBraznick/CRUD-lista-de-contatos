@@ -1,0 +1,113 @@
+<html>
+	<head>
+	<!-- Meta tags-->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>App lista de contato</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="/assets/styles/css/index.css">
+
+		<!-- Fontawesome CDN-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+	<section class="grid grid-template-areas-4">
+			<header class="nav">
+				<h1><?= $_SESSION['nome']?></h1>
+			</header>
+
+			<article class="content container">
+					<div class="container-item">
+						<?= $this->content() ?>
+					</div>
+
+					<div class="container-item">	
+							<?php if ($this->view->detalhes_contato > 0) { ?>
+
+								<div class="contact-details-container">
+									<div class="details-container__header">
+											<h1> <?=  $this->view->detalhes_contato['nome'] ?> </h1>
+											<h3> <?=  $this->view->detalhes_contato['tipo'] ?> </h3>
+									</div>
+
+									<div class="contact-actions">
+										<ul>
+											<li class="d-flex-centralized">
+												<a class="border-radius nav-item" title="Editar contato">
+													<i class="fas fa-pen"></i>
+												</a>
+											</li>
+											<li class="d-flex-centralized">
+												<a class="border-radius nav-item " href="/home/deletaContato?id=<?= $this->view->detalhes_contato['id'] ?>" title="Excluir">
+													<i class="fas fa-trash"></i>
+												</a>
+										</ul>
+									</div>
+
+									<div class="contact-details">
+											<div class="contact-data-item">
+												<h3>Email</h3> <p> <?=  $this->view->detalhes_contato['email'] ?> </p>
+											</div>
+
+											<div class="contact-data-item">
+												<h3>Telefone</h3> <p> <?=  $this->view->detalhes_contato['telefone'] ?> </p>
+											</div>
+											
+											<div class="contact-data-item">
+												<h3>Celular</h3> <p> <?=  $this->view->detalhes_contato['celular'] ?> </p>
+											</div>
+									</div>
+								</div>
+							<?php } ?>
+					</div>
+			</article>
+
+			<aside class="sidenav"> 
+				<nav>
+					<ul>
+						<li class="d-flex-centralized">
+								<a class="border-radius nav-item " href="/home" title="Home">
+									<i class="fas fa-home"></i>
+								</a>
+						</li>
+
+						<li class="d-flex-centralized">
+								<a class="border-radius nav-item" href="/adicionarContato" title="Adicionar Contato">
+									<i class="fas fa-user-plus"></i>
+								</a>
+						</li>
+
+						<li class="d-flex-centralized">
+								<a class="border-radius nav-item" href="#" title="Painel">
+									<i class="far fa-chart-bar"></i>
+								</a>
+						</li>
+						
+						<li class="d-flex-centralized">
+								<a class="border-radius nav-item" href="#" title="Configurações">
+									<i class="fas fa-cog"></i>
+								</a>
+						</li>
+
+						<li class="d-flex-centralized">
+								<a class="border-radius nav-item" href="/sair" title="Sair">
+									<i class="fas fa-sign-out-alt"></i>
+								</a>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+
+		</section>
+
+	</body>
+
+	<script src="/assets/js/editContact.js"></script>
+</html>

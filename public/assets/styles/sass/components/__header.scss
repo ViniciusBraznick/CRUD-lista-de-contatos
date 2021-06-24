@@ -1,0 +1,46 @@
+header{
+  height: 100%;
+  padding: 0 1em;
+  border-bottom: 2px solid gray;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a{
+    color: #383838;
+    font: bold 1.1rem $lato;
+  }
+}
+
+.menu-options{
+  width: 2em;
+  position: relative;
+
+  cursor: pointer;
+
+  .menu{
+    width: 14em; height: 13em;
+    overflow: hidden;
+    position: absolute;
+    top: 2em; left:-12em;
+    background: $input-bg;
+
+  transition: height 200ms;
+
+
+    li{
+      height: 2em;
+      margin: .5em;
+
+      display: flex;
+      align-items: center;
+    
+      i{
+        margin-right: 1em;
+        color: #383838;
+      }
+    }
+  }
+}

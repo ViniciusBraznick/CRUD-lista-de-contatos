@@ -1,0 +1,47 @@
+<div class="contact-list-container">
+  <div class="form-container">
+    <form class="form-add" action="/adicionaNovoContato" method="post">
+
+    <div class="form-input">
+      <label>Nome</label>
+      <input type="text" name="nome" placeholder="Nome do contato" value="<?= $this->view->contato['nome']; ?>">
+    </div>
+    <div class="form-input">
+      <label>E-mail</label>
+      <input type="email" name="email" placeholder="contato@gmail.com" value="<?= $this->view->contato['email']; ?>">
+    </div>
+    <div class="form-input">
+      <label>Descrição</label>
+      <input type="text" name="descricao" placeholder="Classificação do contato" value="<?= $this->view->contato['descricao']; ?>">
+    </div>
+    <div class="form-input">
+      <label>Telefone</label>
+      <input type="tel" name="telefone"  placeholder="(XX) XXXX-XXXX" value="<?= $this->view->contato['telefone']; ?>">
+    </div>
+    <div class="form-input">
+      <label>Celular</label>
+      <input type="tel" name="celular" placeholder="(XX) XXXX-XXXX" value="<?= $this->view->contato['celular']; ?>">
+    </div>
+    
+    <div class="main-button border-radius d-flex-centralized">
+      <button type="submit">Salvar</button>
+    </div>
+   
+    <?php if ($this->view->erro['status']) { ?>
+      <p class="text-erro"> <?= $this->view->erro['MensagemErro'] ?></p>
+    <?php } ?>
+
+    </form>
+  </div>
+  
+    <?php if (isset($_GET['register']) && $_GET['register'] == 'success') { ?>
+      <div class="mini-modal-container border-radius">
+      <div class="mini-modal-content">
+        <h3>Usuário adicionado com sucesso!</h3>
+        <span class="line"></span>
+      </div>
+    </div>
+    <?php } ?> 
+</div>
+
+

@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+button, input {
+  border: none;
+  background: none;
+  outline: none; }
+
+a {
+  color: #383838;
+  text-decoration: none; }
+
+ul {
+  list-style: none; }

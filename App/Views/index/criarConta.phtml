@@ -1,0 +1,35 @@
+<section>
+
+  <div class="form">
+    <h1>Criar conta</h1>
+
+    <form action="/registrar" method="post">
+      <label>Nome</label>
+      <input type="text" name="nome" required value="<?= $this->view->usuario['nome']; ?>" class="input-form border-radius" >
+      
+      <label>Email</label>
+      <input type="email" name="email" required  value="<?= $this->view->usuario['email']; ?>" class="input-form border-radius" >
+
+      <label>Senha</label>
+      <input type="password" name="senha" required value="<?= $this->view->usuario['senha']; ?>" class="input-form border-radius" >
+
+
+      <div class="buttons-form d-flex-inline-centralized">
+        <div class="main-button border-radius d-flex-centralized">
+          <button type="submit">Criar</button>
+        </div>
+
+        <a href="/" class="link-register"> Já tenho cadastro! </a>
+      </div>
+     
+    </form>
+ 
+    <?php if ($this->view->erro['status']) { ?>
+      <p class="text-erro"> <?= $this->view->erro['MensagemErro'] ?></p>
+    <?php } ?>
+  </div>
+
+  <figure class="image-aside">
+    <img src="/assets/imagens/bgpattern.jpg" alt="imagem background">
+  </figure>
+</section>

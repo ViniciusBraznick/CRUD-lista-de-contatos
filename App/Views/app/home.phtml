@@ -1,0 +1,39 @@
+<div class="contact-list-container">
+    <?php if (!empty($this->view->contato)) { ?>
+      <h3>Todos</h3>
+      <div class="card-contacts-container scrool-customized">
+        <?php foreach ($this->view->contato as $indice => $contato) { ?>
+          <a href="/home/details?id=<?= $contato['id']?> " class="card border-radius">
+            <div class="profile-img d-flex-centralized">
+              <i class="fas fa-user"></i>
+            </div>
+
+            <div class="card-content">
+              <h2> <?= $contato['nome']?>  </h2>
+              <p class="contact-description"> <?= $contato['tipo']?> </p>
+            </div>
+          </a>
+        <?php } ?>
+    </div>
+    <?php } else { ?>
+
+
+      <div class="empty-container">
+        <div class="empty-icon">
+          <i class="far fa-clipboard"></i>
+        </div>
+
+        <div class="empty-container-content">
+            <h2>Você não possui nenhum contato.</h2>
+
+            <div class="button-cta border-radius">
+              <i class="fas fa-user-plus"></i>
+              <a href="/adicionarContato">Adicionar contato</a>
+            </div>
+        </div>
+      </div>
+    <?php  } ?>
+</div>
+      
+
+      

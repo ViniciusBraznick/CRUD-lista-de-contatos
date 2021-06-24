@@ -1,0 +1,209 @@
+
+// Formularios
+input{
+  width: 100%; height: 3em;
+
+  padding-left: 1em;
+
+  font: normal 1rem $lato;
+
+  background: $input-bg;
+}
+
+label{
+  margin: .5em 0;
+  
+  font: bold 1.2rem $lato;
+  color: $label-color;
+}
+
+// Componentes UI
+.main-button{
+  width: 8em; height: 3em;
+
+  cursor: pointer;
+  background: $button-form;
+  
+  button{
+    font: bold 1.1rem $lato;
+
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.cancel-button{
+  
+  background: rgb(184, 31, 31);
+}
+
+// Estilização
+.border-radius{
+  border-radius: 10px;
+}
+
+// Posicionamento 
+.d-flex-centralized{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex-inline-centralized{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Texto
+h1{
+  font: bold  2rem $lato;
+}
+
+h2{
+  font: bold  1.3rem $lato;
+  color: #1A1C1D; 
+}
+
+h3{
+	color: #8083A3;
+	font: bold 1.1rem $lato;
+	padding-left: 1em;
+}
+
+p{
+  font: normal 1rem $lato;
+}
+
+.contact-description{
+  color: #8083A3;
+  font: bold 1rem $lato;
+  margin-top: .1em;
+}
+
+.link-register{
+  color: $button-form;
+  cursor: pointer;
+  border-bottom: 1px solid $button-form;
+  font-family: $lato;;
+}
+
+.text-erro{
+  margin-top: .5em;
+  color: red;
+  font: normal italic 1.1rem $lato;
+  animation: animationTextErro .2s;
+}
+
+@keyframes animationTextErro {
+  0%, 100%{
+    transform: translateX(-5px);
+  }
+
+  50%{
+    transform: translateX(5px);
+  }
+}
+
+
+// Grid
+.grid {
+  display: grid;
+  margin: 0 auto;
+  }
+  
+  .nav {
+  grid-area: nav;
+  }
+  
+  .content {
+  grid-area: content;
+  }
+  
+  .sidenav {
+  grid-area: sidenav;
+  }
+  
+  .grid-template-areas-4 {
+  grid-template-columns: 5% 95%;
+  grid-template-rows: 4em 45vh 45vh;
+  grid-template-areas:
+  "sidenav nav nav"
+  "sidenav content content"
+  "sidenav content content"
+  ;
+  }
+
+
+.container{
+  width: 100%; height: 90vh;
+  display: flex;
+  flex-direction: row; 
+}
+
+.container-item{
+  width: 100%;  height: 100%;
+  overflow: hidden;
+
+  &:first-child{
+    width: 65%;
+  }
+}
+
+
+.login-container{
+  position: relative;
+}
+
+.hide{
+  display: none;
+}
+
+// Modal
+.modal-container{
+  width: 100%; height: 100%;
+
+  position: absolute;
+  top: 0; left: 0;
+
+  background: rgba(66, 65, 65, 0.411);
+
+  .modal-content{
+    width: 20%; height: 15em;
+    
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background: white;
+
+    p{
+      font: normal 1.2rem $lato;
+    }
+
+    .fa-check-circle{
+      font-size: 3rem;
+      color: forestgreen;
+    }
+  }
+}
+
+
+.contact-details-container{
+  animation: animacao 1s ;
+  overflow: hidden;
+}
+
+
+@keyframes animacao {
+  0% {
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}

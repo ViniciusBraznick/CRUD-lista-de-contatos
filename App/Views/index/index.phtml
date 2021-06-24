@@ -1,0 +1,47 @@
+
+<section class="login-container">
+
+  <div class="form">
+    <h1>Entrar</h1>
+
+    <form action="/logar" method="post">
+      <label>Email</label>
+      <input type="email" name="email" required class="input-form border-radius" >
+      
+      <label>Senha</label>
+      <input type="password" name="senha" required class="input-form border-radius" >
+
+
+      <div class="buttons-form d-flex-inline-centralized">
+        <div class="main-button border-radius d-flex-centralized">
+          <button type="submit">Entrar</button>
+        </div>
+
+        <a href="/criarConta" class="link-register"> Não tenho cadastro! </a>
+      </div>
+
+        <?php if ($this->view->erro['status']) { ?>
+          <p class="text-erro"> <?= $this->view->erro['MensagemErro'] ?></p>
+        <?php } ?>
+    </form>
+    
+  </div>
+
+  <figure class="image-aside">
+    <img src="/assets/imagens/bgpattern.jpg" alt="imagem background">
+  </figure>
+
+  <?php if (isset($_GET['register']) && $_GET['register'] == 'success') { ?>
+      <div class="modal-container d-flex-centralized ">
+        <div class="modal-content border-radius">
+          <i class="fas fa-check-circle"></i>
+          <h2 class="modal-text">Usuário cadastrado com sucesso!</h2>
+          <p>Faça o login para continuar.</p>
+
+          <div class="main-button border-radius d-flex-centralized">
+            <button id="btn-modal">Ok</button>
+          </div>
+        </div>
+      </div>
+  <?php } ?>
+</section>
