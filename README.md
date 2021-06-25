@@ -18,8 +18,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 * Pré-processador SASS 
 
 ### Features 
-- [X]  Sistema de login e cadastro
-- [ ]  Adicionar endereço do contato
-- [ ] Tema escuro
+- [X] Sistema de login e cadastro
+- [ ] Adicionar endereço do contato
 - [ ] Favoritar contatos
 - [ ] Alterar dados da conta de usuário (nome de usuário e senha)
+- [ ] Adicionar foto de perfil
+- [ ] Tema escuro
