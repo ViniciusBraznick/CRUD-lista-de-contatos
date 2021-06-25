@@ -1,37 +1,29 @@
 .contact-details-container{
-  // background: red;
   width: 90%;
-
   margin: 2em auto;
 
-
-  // Rever
-  h3{
-    padding-left: 0;
-  }
+  overflow: hidden;
+  animation: animacao 1s;
 
   .contact-actions{
-
     margin-top: 1em;
 
     ul{
       display: flex;
 
       .nav-item{  
-        color: #8083A3;
-        font-size: 1em;
-        padding: .5em;
-        border: 2px solid #4f699e41;
         margin-right: .5em;
+        padding: .5em;
+
+        border: 2px solid #4f699e41;
+        font-size: 1em;
+        color: #8083A3;
       
         &:hover{
           cursor: pointer;
+
           background: #DEE3F8;
           color: #4A74C6;
-        }
-
-        .fas.fa-star{
-          color: #eeb422;
         }
       }
     }
@@ -39,19 +31,24 @@
 }
 
 .contact-details{
-
   margin-top: 2em;
 
   .contact-data-item{
     width: 20em;
     margin: .5em 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     &:hover{
       background: #dee3f841;
     }
+  }
+}
+
+@keyframes animacao {
+  0% {
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
   }
 }

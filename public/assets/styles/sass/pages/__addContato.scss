@@ -1,8 +1,6 @@
 .contact-list-container{
   position: relative;
-
-  overflow: hidden;
-
+  min-width: 30em;
 }
 
 .form-container{
@@ -39,9 +37,7 @@
   .main-button{
     margin-top: 2em;
   }
-
 }
-
 
 .mini-modal-container{
   width: 20em; height: 4em;

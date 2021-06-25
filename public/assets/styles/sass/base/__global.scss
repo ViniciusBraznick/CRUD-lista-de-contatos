@@ -6,7 +6,6 @@ input{
   padding-left: 1em;
 
   font: normal 1rem $lato;
-
   background: $input-bg;
 }
 
@@ -25,16 +24,12 @@ label{
   background: $button-form;
   
   button{
+    width: 100%; height: 100%;
     font: bold 1.1rem $lato;
 
     cursor: pointer;
     color: white;
   }
-}
-
-.cancel-button{
-  
-  background: rgb(184, 31, 31);
 }
 
 // Estilização
@@ -56,24 +51,21 @@ label{
 }
 
 // Texto
-h1{
-  font: bold  2rem $lato;
-}
+h1{ font: bold 2rem $lato; }
 
 h2{
-  font: bold  1.3rem $lato;
+  font: bold 1.3rem $lato;
   color: #1A1C1D; 
 }
 
 h3{
+  font: bold 1.1rem $lato;
+	// padding-left: 1em;
+
 	color: #8083A3;
-	font: bold 1.1rem $lato;
-	padding-left: 1em;
 }
 
-p{
-  font: normal 1rem $lato;
-}
+p{ font: normal 1rem $lato; }
 
 .contact-description{
   color: #8083A3;
@@ -82,15 +74,15 @@ p{
 }
 
 .link-register{
+  font-family: $lato;
+  border-bottom: 1px solid $button-form;
   color: $button-form;
   cursor: pointer;
-  border-bottom: 1px solid $button-form;
-  font-family: $lato;;
 }
 
 .text-erro{
   margin-top: .5em;
-  color: red;
+  color: rgb(192, 35, 35);
   font: normal italic 1.1rem $lato;
   animation: animationTextErro .2s;
 }
@@ -106,7 +98,7 @@ p{
 }
 
 
-// Grid
+// Template Grid
 .grid {
   display: grid;
   margin: 0 auto;
@@ -125,13 +117,13 @@ p{
   }
   
   .grid-template-areas-4 {
-  grid-template-columns: 5% 95%;
+  min-width: 768px;
+  grid-template-columns: 5em 95%;
   grid-template-rows: 4em 45vh 45vh;
   grid-template-areas:
   "sidenav nav nav"
   "sidenav content content"
-  "sidenav content content"
-  ;
+  "sidenav content content";
   }
 
 
@@ -143,20 +135,11 @@ p{
 
 .container-item{
   width: 100%;  height: 100%;
-  overflow: hidden;
 
   &:first-child{
+    min-width: 20em;
     width: 65%;
   }
-}
-
-
-.login-container{
-  position: relative;
-}
-
-.hide{
-  display: none;
 }
 
 // Modal
@@ -188,22 +171,5 @@ p{
       font-size: 3rem;
       color: forestgreen;
     }
-  }
-}
-
-
-.contact-details-container{
-  animation: animacao 1s ;
-  overflow: hidden;
-}
-
-
-@keyframes animacao {
-  0% {
-    opacity: 0;
-  }
-
-  100%{
-    opacity: 1;
   }
 }

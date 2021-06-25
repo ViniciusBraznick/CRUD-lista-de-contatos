@@ -1,7 +1,6 @@
 
 <section class="login-container">
-
-  <div class="form">
+  <div class="form d-flex-centralized">
     <h1>Entrar</h1>
 
     <form action="/logar" method="post">
@@ -26,11 +25,7 @@
     </form>
     
   </div>
-
-  <figure class="image-aside">
-    <img src="/assets/imagens/bgpattern.jpg" alt="imagem background">
-  </figure>
-
+        
   <?php if (isset($_GET['register']) && $_GET['register'] == 'success') { ?>
       <div class="modal-container d-flex-centralized ">
         <div class="modal-content border-radius">

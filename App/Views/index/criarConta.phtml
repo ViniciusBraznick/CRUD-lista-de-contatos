@@ -1,6 +1,5 @@
-<section>
-
-  <div class="form">
+<section class="login-container">
+  <div class="form d-flex-centralized">
     <h1>Criar conta</h1>
 
     <form action="/registrar" method="post">
@@ -21,15 +20,10 @@
 
         <a href="/" class="link-register"> Já tenho cadastro! </a>
       </div>
-     
     </form>
  
     <?php if ($this->view->erro['status']) { ?>
       <p class="text-erro"> <?= $this->view->erro['MensagemErro'] ?></p>
     <?php } ?>
   </div>
-
-  <figure class="image-aside">
-    <img src="/assets/imagens/bgpattern.jpg" alt="imagem background">
-  </figure>
 </section>
