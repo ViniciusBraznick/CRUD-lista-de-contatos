@@ -1,6 +1,6 @@
 <div class="contact-list-container">
     <?php if (!empty($this->view->contato)) { ?>
-      <h3>Todos</h3>
+      <h3 class="contact-list-title">Todos</h3>
       <div class="card-contacts-container scrool-customized">
         <?php foreach ($this->view->contato as $indice => $contato) { ?>
           <a href="/home/details?id=<?= $contato['id']?> " class="card border-radius">
