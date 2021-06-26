@@ -83,8 +83,10 @@ class AppController extends Action{
 			}
 		}
 
-    $this->validaEmail($_POST['email']);
-    
+    if ($this->validaEmail($_POST['email'])) {
+      $this->mostraMEnsagemErro('E-mail inválido');
+    } 
+
     $app->__set('id_usuario', $_SESSION['id']);
     $app->__set('nome', $_POST['nome']);
     $app->__set('email', $_POST['email']);
@@ -96,28 +98,6 @@ class AppController extends Action{
       header('Location: /adicionarContato?register=success');
     }
   }
-
-  public function mostraMEnsagemErro($mensagem_erro){
-    $this->view->contato = [
-			'nome' => $_POST['nome'],
-			'email' => $_POST['email'],
-			'descricao' => $_POST['descricao'],
-			'telefone' => $_POST['telefone'],
-			'celular' => $_POST['celular']
-		];
-
-    
-    $this->view->erro =  ['MensagemErro' =>  $mensagem_erro, 'status' => true];
-    $this->render('addContato', 'layout2');
-
-    die();
-  }
-
-  public function validaEmail($email){
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$this->mostraMEnsagemErro('E-mail do contato inválido');
-		}
-	}
 
   public function editaContato(){
     $this->validaSessao();
@@ -133,9 +113,13 @@ class AppController extends Action{
     $app->__set("email", $_POST['email']);
     $app->__set("telefone", $_POST['telefone']);
     $app->__set("celular", $_POST['celular']);
- 
 
     $id_contato = $app->__get('id_contato');
+
+    if ($this->validaEmail(\str_replace(' ', '', $_POST['email']))) {
+      header("Location: /home/details?id=$id_contato&erro=email");
+      die();
+    }
     
     if ($app->editaContato()) {
       header("Location: /home/details?id=$id_contato");
@@ -144,5 +128,28 @@ class AppController extends Action{
     }
 
   }
+
+  public function mostraMEnsagemErro($mensagem_erro){
+    $this->view->contato = [
+			'nome' => $_POST['nome'],
+			'email' => $_POST['email'],
+			'descricao' => $_POST['descricao'],
+			'telefone' => $_POST['telefone'],
+			'celular' => $_POST['celular']
+		];
+
+
+    $this->view->erro =  ['MensagemErro' =>  $mensagem_erro, 'status' => true];
+    $this->render('addContato', 'layout2');
+
+    die();
+  }
+
+
+  public function validaEmail($email){
+    return !filter_var($email, FILTER_VALIDATE_EMAIL);
+	}
+
+  
 }
 ?>

@@ -64,6 +64,10 @@
 												<h3>Celular</h3> <p> <?=  $this->view->detalhes_contato['celular'] ?> </p>
 											</div>
 									</div>
+
+									<?php if (isset($_GET['erro']) && $_GET['erro'] == 'email') { ?>
+										<p class="text-erro">E-mail inválido</p>
+									<?php } ?>
 								</div>
 							<?php } ?>
 					</div>
