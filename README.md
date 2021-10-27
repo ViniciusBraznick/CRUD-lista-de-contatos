@@ -1,7 +1,7 @@
 
 
 <h1  align="center">CRUD lista de contatos</h1>
-<h4 align="center"> 🚧 Em construção... 🚧 </h4>
+
 
 
 
@@ -25,11 +25,3 @@ As seguintes ferramentas foram usadas na construção do projeto:
 * Padrão de arquitetura MVC
 * HTML5 e CSS3
 * Pré-processador SASS 
-
-### Features 
-- [X] Sistema de login e cadastro
-- [ ] Adicionar endereço do contato
-- [ ] Favoritar contatos
-- [ ] Alterar dados da conta de usuário (nome de usuário e senha)
-- [ ] Adicionar foto de perfil
-- [ ] Tema escuro
